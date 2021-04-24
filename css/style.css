@@ -12,28 +12,35 @@
 
 body {
   background: #f4f5f9;
-  }
+}
 
-  header{
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    align-items: center;
-    padding: 0rem 3.5rem;
-    color: #6a6b6d;
-  }
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  padding: 0rem 3.5rem;
+  color: #6a6b6d;
+}
 
-  header h2{
-    font-size: 1.8rem;
-  }
+header h2{
+  font-size: 1.8rem;
+}
 
-  header h2 span {
-    margin-left: 1rem
-  }
+header h2 span {
+  margin-left: 1rem
+}
 
 header h2 {
   width: 20%;
 }
+
+
+#menu-toggle {
+  display: none;
+
+}
+
 
 .main-menu{
 
@@ -44,9 +51,23 @@ header h2 {
 
 }
 
+.menu-responsive {
+  display: inline-block;
+  width: 70%
+}
+
+.menu-responsive label {
+  display: none;
+  text-align: right;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+
+
 form.search{
 
-  width: 780px;
+  width: 100%;
   background: #fff;
   border-radius: 10px;
 
@@ -189,8 +210,8 @@ header a {
 }
 
 .item-flex {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .price h4 {
@@ -239,4 +260,207 @@ justify-content: space-between;
 
 .deals-carousel .flickity-prev-next-button.next {
   right: -10px;
+}
+
+.card-brand{
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0rem 3rem;
+
+
+
+}
+
+.single-card {
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.3);
+
+}
+
+.footer {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 22% 78%;
+  /* border-top: 1px solid #6a6b6d; */
+  grid-gap: 2rem;
+  color: #6a6b6d;
+  background: #fff;
+
+
+}
+
+.footer-menu {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-gap: 2rem
+}
+
+.menu-card {
+  padding: 1rem;
+}
+
+.menu-card h3 {
+  margin-bottom: .8rem;
+}
+
+
+.menu-card a {
+  display: block;
+  color: #6a6b6d;
+}
+
+
+@media only screen and (max-width: 1180px) {
+
+  header h2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    padding-right: 0.8rem;
+
+  }
+
+  .menu-responsive{
+    width: 60%
+  }
+
+}
+
+
+@media only screen and (max-width: 980px) {
+  #menu-toggle:checked ~ .main-menu:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    background: rgba(0,0,0,0.6);
+
+
+  }
+
+  #menu-toggle:checked ~ .main-menu .menu-responsive{
+
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 600;
+  }
+
+  #menu-toggle:checked ~ .main-menu .menu-responsive label{
+    display: block;
+  }
+
+  .menu-responsive{
+    position: absolute;
+    top: -100%
+  }
+
+.main-menu{
+  justify-content: flex-end;
+}
+
+
+.main-menu a {
+  margin-left: 1rem;
+}
+
+.carousel-item{
+  display: block;
+  width: 100%;
+}
+
+.carousel-info{
+  width: 100%
+}
+
+.carousel-image{
+  display: none;
+}
+
+.single-item{
+  width: 30%
+}
+
+.deals-carousel  .single-item {
+  width: 50% !important;
+}
+.deals-inner{
+  display: block;
+}
+.timer{
+  margin-bottom: 1rem;
+}
+
+.footer{
+  display: block;
+}
+
+.footer-menu{
+  grid-template-columns: repeat(2, 1fr)
+}
+
+}
+
+
+@media only screen  and (max-width: 768px){
+
+  header h2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+
+  }
+
+
+.single-item{
+  width: 50%;
+}
+
+.deals-carousel .single-item{
+  width: 100% !important;
+}
+
+
+  .card-brand{
+    display: block;
+  }
+
+  .single-card{
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen  and (max-width: 540px){
+
+header{
+  padding:  0rem  1.5rem;
+}
+
+header h2{
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+
+}
+  .single-item{
+    width: 100%;
+  }
+
+  .deals-carousel .flickity-prev-next-button.previous {
+    left: 40px;
+  }
+
+  .deals-carousel .flickity-prev-next-button.next {
+    right: 40px;
+  }
+
+
 }
